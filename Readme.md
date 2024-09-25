@@ -44,3 +44,16 @@ Explication des paramètres
 `--referenceScriptLibraries` Ajoute _ValidationScriptsPartial aux pages Modifier et Créer. (TODO: Se renseigner en détail sur ces scripts)
 `--databaseProvider sqlite` Nom du provider SQL (SQLite ou SQL Serveur)
 
+## 4. Migration de la base de données
+
+Utilisation de EntityFramwork (`ef` dans la  CLI) permet la migration et donc la gestion de la base de données (Création, modification...)
+
+Création d'une nouvelle migration nommée InitialCreate (Se retrouve dans ./Migrations/[DATETIME]_InitialCreate.cs)
+```shell
+dotnet ef migrations add InitialCreate
+ ```
+
+Mise à jour de la base de données vers la dernière migration (commande `up` du fichier InitialCreate)
+```shell
+dotnet ef database update
+ ```
